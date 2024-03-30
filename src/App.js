@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import CurrencyChart from './CurrencyChart';
 import './App.css';
 
 class App extends Component {
@@ -104,6 +105,9 @@ class App extends Component {
               <input type="number" id="target-amount" value={targetAmount} disabled />
             </div>
             <button onClick={this.convertCurrency}>Convert</button>
+          </section>
+          <section>
+            <CurrencyChart exchangeRates={exchangeRates} />
           </section>
         </main>
         <footer>
