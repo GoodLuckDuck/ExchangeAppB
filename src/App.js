@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import CurrencyChart from './CurrencyChart';
+import HistoricalChart from './HistoricalChart';
 import './App.css';
 
 class App extends Component {
@@ -16,8 +17,11 @@ class App extends Component {
     };
   }
 
+  
+  
   componentDidMount() {
     this.fetchExchangeRates();
+    
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -107,11 +111,17 @@ class App extends Component {
             <button onClick={this.convertCurrency}>Convert</button>
           </section>
           <section>
+          <section>
+            <HistoricalChart exchangeRates={exchangeRates} />
+          </section>
+</section>
+          <section>
             <CurrencyChart exchangeRates={exchangeRates} />
           </section>
+         
         </main>
         <footer>
-          <a href="https://yourportfolio.com">Visit my portfolio</a>
+          <a href="https://yourportfolio.com">My portfolio</a>
         </footer>
       </div>
     );
